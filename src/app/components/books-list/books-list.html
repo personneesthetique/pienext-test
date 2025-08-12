@@ -1,0 +1,42 @@
+<div class="books-list">
+  <form [formGroup]="filtersForm" class="books-list__filter-form">
+    <mat-form-field>
+      <mat-label>Название</mat-label>
+      <input
+        (input)="filterBooks()"
+        matInput
+        placeholder="Введите..."
+        formControlName="byTitle"
+      />
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Автор</mat-label>
+      <input
+        (input)="filterBooks()"
+        matInput
+        placeholder="Введите..."
+        formControlName="byAuthor"
+      />
+    </mat-form-field>
+  </form>
+
+  <mat-list>
+    @for (book of books(); track book.id) {
+    <mat-list-item (click)="openBook(book.id)">
+      <img
+        loading="lazy"
+        matListItemAvatar
+        [src]="book.coverUrl"
+        [alt]="book.title"
+      />
+      <h3 matListItemTitle>{{book.title}}</h3>
+      <p matListItemLine>
+        <span>{{book.author}}</span>
+      </p>
+    </mat-list-item>
+    }
+  </mat-list>
+
+  <button (click)="addBook()" matButton="elevated">Добавить книгу</button>
+</div>

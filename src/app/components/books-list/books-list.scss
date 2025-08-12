@@ -1,0 +1,32 @@
+.books-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 200px;
+  max-height: 400px;
+  padding-top: 50px;
+  gap: 5px;
+
+  &__filter-form {
+    display: flex;
+    gap: 10px;
+  }
+
+  button {
+    flex-shrink: 0;
+  }
+
+  .mat-mdc-list.mat-mdc-list-base.mdc-list {
+    max-height: 600px;
+    min-width: 400px;
+    max-width: 600px;
+    overflow-y: scroll;
+  }
+
+  .mat-mdc-list-item.mdc-list-item.mdc-list-item--with-leading-avatar {
+    &:hover {
+      background-color: gray;
+    }
+  }
+}

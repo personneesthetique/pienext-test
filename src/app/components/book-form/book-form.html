@@ -1,0 +1,27 @@
+<form [formGroup]="addingForm" (ngSubmit)="addBook()" class="book-form">
+  <mat-form-field>
+    <mat-label>Полное название изображения</mat-label>
+    <input formControlName="coverUrl" matInput />
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Название</mat-label>
+    <input formControlName="title" matInput />
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Автор</mat-label>
+    <input formControlName="author" matInput />
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Описание</mat-label>
+    <textarea matInput formControlName="description"></textarea>
+  </mat-form-field>
+
+  <button [disabled]="addingForm.invalid" type="submit" matButton="elevated">
+    Добавить книгу
+  </button>
+
+  <button (click)="cancelAddingBook()" matButton="elevated">Отменить</button>
+</form>

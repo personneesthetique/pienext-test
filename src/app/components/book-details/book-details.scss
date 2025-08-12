@@ -1,0 +1,10 @@
+.book-details {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 50px;
+
+  &__card {
+    max-width: 400px;
+  }
+}

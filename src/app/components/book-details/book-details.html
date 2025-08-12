@@ -1,0 +1,28 @@
+<div class="book-details">
+  <mat-card appearance="outlined" class="book-details__card">
+    <mat-card-header>
+      <div mat-card-avatar></div>
+      <mat-card-title>{{book()?.title}}</mat-card-title>
+    </mat-card-header>
+
+    <img
+      mat-card-image
+      [src]="book()?.coverUrl"
+      alt="{{book()?.title}}"
+      width="300"
+      height="500"
+    />
+
+    <mat-card-content>
+      <p>{{book()?.author}}</p>
+    </mat-card-content>
+
+    <mat-card-content>
+      <p>{{book()?.description}}</p>
+    </mat-card-content>
+
+    <mat-card-actions>
+      <button matButton (click)="backToBooksList()">Назад</button>
+    </mat-card-actions>
+  </mat-card>
+</div>
